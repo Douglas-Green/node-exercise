@@ -1,9 +1,14 @@
+/** @format */
+
 import express from "express";
+import userRouter from "./routes/user.route.js";
 // TODO: import router from users.route
 
 const router = express.Router();
 
-router.get("/test", (req, res) => {
+router.use("/users", userRouter);
+
+router.get("/test", (_req, res) => {
   res.send("working");
 });
 
